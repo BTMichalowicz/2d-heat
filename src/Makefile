@@ -19,6 +19,12 @@ openmp-2dheat.o: openmp-2dheat.c
 mpi: mpi-2dheat.o
 	$(MPICC) $(CFLAGS) mpi-2dheat.o -o mpi-2dheat.x 
 
+1sc-mpi: 1sc-mpi-2dheat.o
+	$(MPICC) $(CFLAGS) 1sc-mpi-2dheat.o -o 1sc-mpi-2dheat.x
+
+1sc-mpi-2dheat.o: 1sc-mpi-2dheat.c
+	$(MPICC) $(CFLAGS) -c 1sc-mpi-2dheat.c -g
+
 mpi-2dheat.o: mpi-2dheat.c 
 	$(MPICC) $(CFLAGS) -c mpi-2dheat.c
 
